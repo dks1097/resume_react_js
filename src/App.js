@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import * as React from "react";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
+import { CardActionArea } from "@mui/material";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="Profile"></div>
+      
+      <div className="Header">
+      <div className="navbar">
+        <nav className="menu">
+          <ul className="menu-list">
+            <li>
+              <a href="#">HOME</a>
+            </li>
+            <li>
+              <a href="#">SKILLS</a>
+            </li>
+            <li>
+              <a href="#">PROJECTS</a>
+            </li>
+            <li>
+              <a href="#">EXPERIENCE</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      </div>
+
+      <footer>
+        <p>&copy; 2023 Carlos Monteiro. All rights reserved.</p>
+      </footer>
     </div>
   );
 }

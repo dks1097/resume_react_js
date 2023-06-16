@@ -1,11 +1,10 @@
 .App {
   text-align: center;
+  height: 100lvh;
+  background-color: #282c34;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -24,14 +23,61 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.Header {
+  flex-direction: row;
 }
+
+
+
+.navbar {
+  background-color: #adb0b6;
+  padding: 10px;
+}
+
+.menu-list {
+  --base-font-size: 24px;
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: calc(100px + 2vmin);
+  font-size: var(--base-font-size);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+@media (max-width: 768px) {
+  .menu-list {
+    font-size: calc(var(--base-font-size) + (12 - var(--base-font-size)) * ((100vw - 320px) / (768 - 320))); /* Adjust the range and transition as needed */
+  }
+  .menu li {
+    margin-right: 10px;
+  }
+}
+
+
+.menu li {
+  margin-right: 20px;
+}
+
+.menu li:last-child {
+  margin-right: 0;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #09092c;
+  font-weight: bold;
+}
+
+.menu li a:hover {
+  color: #f1bdaa;
+}
+
 
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
