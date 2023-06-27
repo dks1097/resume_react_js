@@ -1,8 +1,90 @@
 .App {
   text-align: center;
   height: 100lvh;
+  width: 100lvw;
   background-color: #282c34;
 }
+
+.Header {
+  flex-direction: row;
+  height: 20%;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.navbar {
+  border-radius: 5% 50% 15px 15px;
+  display: flex;
+  position: absolute;
+  top: 25%;
+  left: 60%;
+  transform: translateX(-5%);
+  max-width: 800px;
+  max-height: 70px;
+}
+.menu {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.menu-list {
+  list-style-type: none;
+  display: flex;
+  font-size: calc(1.17vw + 10px);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  padding-left: 0;
+}
+
+.menu-list li {
+  flex-grow: 1;
+  padding: 0 1vw;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #2cecdc;
+  align-items: center;
+  justify-content: center;
+  transition: text-shadow 0.3s ease-in-out;
+  letter-spacing: 1px;
+}
+
+.menu li a:hover {
+  color: #f1bdaa;
+  text-shadow: 0 0 5px rgba(241, 189, 170, 0.7);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: space-between;
+  }
+
+  .menu-list li a .icon {
+    display: inline-block;
+  }
+
+  .menu-list li a .text {
+    display: none;
+  }
+
+  nav.menu {
+    width: 100%;
+  }
+}
+
+@media (min-width: 769px) {
+  .menu-list li a .text {
+    display: inline-block;
+  }
+
+  .menu-list li a .icon {
+    display: none;
+  }
+}
+
 
 
 
@@ -11,67 +93,6 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.Header {
-  flex-direction: row;
-}
-
-
-
-.navbar {
-  background-color: #adb0b6;
-  padding: 10px;
-}
-
-.menu-list {
-  --base-font-size: 24px;
-  list-style-type: none;
-  display: flex;
-  justify-content: flex-end;
-  padding-right: calc(100px + 2vmin);
-  font-size: var(--base-font-size);
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-
-@media (max-width: 768px) {
-  .menu-list {
-    font-size: calc(var(--base-font-size) + (12 - var(--base-font-size)) * ((100vw - 320px) / (768 - 320))); /* Adjust the range and transition as needed */
-  }
-  .menu li {
-    margin-right: 10px;
-  }
-}
-
-
-.menu li {
-  margin-right: 20px;
-}
-
-.menu li:last-child {
-  margin-right: 0;
-}
-
-.menu li a {
-  text-decoration: none;
-  color: #09092c;
-  font-weight: bold;
-}
-
-.menu li a:hover {
-  color: #f1bdaa;
-}
-
 
 @keyframes App-logo-spin {
   from {
