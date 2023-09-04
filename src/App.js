@@ -1,53 +1,37 @@
+import Header from "./components/Header";
+
 import "./App.css";
-import * as React from "react";
+import React, { useState } from 'react';
+import HomePage from "./components/HomePage";
+import WelcomePage from "./components/WelcomePage";
 
+const App = () => {
+  const [welcomeVisible, setWelcomeVisible] = useState(true);
 
-function App() {
+  const handleAnimationEnd = () => {
+    setWelcomeVisible(false);
+  };
   return (
     <div className="App">
+      
       <div className="Header">
-        <div className="navbar">
-          <nav className="menu">
-            <ul className="menu-list">
-              <li>
-                <a href="#">
-                  <span className="icon">
-                    <i className="fas fa-home"></i>
-                  </span>
-                  <span className="text">Home</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span className="icon">
-                    <i className="fas fa-puzzle-piece"></i>
-                  </span>
-                  <span className="text">Skills</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span className="icon">
-                    <i className="fas fa-folder"></i>
-                  </span>
-                  <span className="text">Projects</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span className="icon">
-                    <i className="fas fa-briefcase"></i>
-                  </span>
-                  <span className="text">Experience</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
+        <Header/>
+      </div>
+      <div className="Home">
+        <HomePage/>
       </div>
       
+
+      <div className="footer">
+        <footer>
+          <p>&copy; 2023 Carlos Monteiro. All rights reserved.</p>
+        </footer>
+      </div>
     </div>
+
   );
 }
 
 export default App;
+//{welcomeVisible && <WelcomePage onAnimationEnd={handleAnimationEnd} />}
+//adicionar futuramente e fazer alteraçoes

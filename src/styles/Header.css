@@ -1,0 +1,120 @@
+.navbar {
+  display: flex;
+  max-width: 1000px;
+  margin: 1%;
+}
+
+.menu {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-left: 50px;
+}
+
+.menu-list {
+  list-style-type: none;
+  display: flex;
+  font-size: calc(1vw);
+  color: #52DEE5;
+  text-align: center;
+  font-family: "Red Rose";
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  justify-content: space-between;
+  padding: 0 5%
+}
+
+.menu-list a {
+  text-decoration: none;
+  color: #52DEE5;
+  align-items: center;
+  justify-content: center;
+  transition: text-shadow 0.3s ease-in-out;
+  letter-spacing: 10px;
+}
+
+.menu-list a :hover,
+.menu-list a :active {
+  color: #f1bdaa;
+  text-shadow: 0 0 5px rgba(241, 189, 170, 0.7);
+}
+
+.menu-list:focus a {
+  text-shadow: 0 0 5px rgba(241, 189, 170, 0.7);
+  animation: glowText 1s alternate infinite;
+}
+
+@keyframes glowText {
+  0% {
+    text-shadow: 0 0 5px rgba(241, 189, 170, 0.7);
+  }
+
+  100% {
+    text-shadow: 0 0 20px rgba(241, 189, 170, 0.7);
+  }
+}
+
+@media (max-width: 769px) {
+  .navbar {
+    max-height: 50px;
+    position: relative;
+    border-bottom: 1px solid #7C7C7C;
+    background: linear-gradient(180deg, rgba(124, 124, 124, 0.00) 0%, rgba(56, 61, 59, 0.50) 100%);
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    transform: translateX(0%);
+    transform: translateY(-100%);
+    animation: slideInDown 1.2s ease-out forwards;
+  }
+  @keyframes slideInDown {
+    0% {
+      transform: translateY(-100%);
+    }
+
+    50% {
+      transform: translateY(15px);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .menu-list a i {
+    display: inline-block;
+    font-size: large;
+  }
+
+  .menu-list .text {
+    display: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+@media (min-width: 770px) {
+  .navbar {
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  .menu-list .text {
+    display: inline-block;
+  }
+
+  .menu-list a i {
+    display: none;
+  }
+}

@@ -1,105 +1,56 @@
 .App {
   text-align: center;
-  height: 100lvh;
-  width: 100lvw;
+  height: 100vh;
+  width: 100vw;
   background-color: #282c34;
 }
 
 .Header {
-  flex-direction: row;
-  height: 20%;
+  height: 15%;
+  width: 100%;
   display: flex;
+  flex-direction: row-reverse;
   justify-content: flex-end;
-  position: relative;
+  align-items: center;
+  padding-left: 50%;
 }
 
-.navbar {
-  border-radius: 5% 50% 15px 15px;
-  display: flex;
+@media (max-width: 769px) {
+  .Header {
+    padding-left: 0%;
+  }
+}
+.Home{
+  height: 80%;
+}
+.Avatar {
   position: absolute;
-  top: 25%;
-  left: 60%;
-  transform: translateX(-5%);
-  max-width: 800px;
-  max-height: 70px;
-}
-.menu {
-  flex-grow: 1;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.menu-list {
-  list-style-type: none;
-  display: flex;
-  font-size: calc(1.17vw + 10px);
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  padding-left: 0;
+  /*top: 10%;
+  left: 10%;
+  /*width: 500px;
+  height: 500px;*/
+  background-color: #adb0b6;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  overflow: hidden;
+  /* Ensure content within Avatar does not overflow */
+  z-index: -1;
+  /* Set a higher z-index to keep Avatar on top */
 }
 
-.menu-list li {
-  flex-grow: 1;
-  padding: 0 1vw;
-}
-
-.menu li a {
-  text-decoration: none;
-  color: #2cecdc;
-  align-items: center;
-  justify-content: center;
-  transition: text-shadow 0.3s ease-in-out;
-  letter-spacing: 1px;
-}
-
-.menu li a:hover {
-  color: #f1bdaa;
-  text-shadow: 0 0 5px rgba(241, 189, 170, 0.7);
-}
-
-@media (max-width: 768px) {
-  .navbar {
-    justify-content: space-between;
-  }
-
-  .menu-list li a .icon {
-    display: inline-block;
-  }
-
-  .menu-list li a .text {
-    display: none;
-  }
-
-  nav.menu {
-    width: 100%;
-  }
-}
-
-@media (min-width: 769px) {
-  .menu-list li a .text {
-    display: inline-block;
-  }
-
-  .menu-list li a .icon {
-    display: none;
-  }
-}
-
-
-
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+.footer {
+  width: 100%;
+  height: 5%;
+  flex-shrink: 0;
+  border-top: 1px solid #7C7C7C;
+  background: linear-gradient(180deg, rgba(124, 124, 124, 0.00) 0%, rgba(56, 61, 59, 0.50) 100%);
+  color: #EEE5E9;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
 }
